@@ -1,8 +1,13 @@
-// app/page.tsx
-import { redirect } from "next/navigation";
+"use client";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-// ✅ No "use client" — this must stay a server component
-export default function Page() {
-  redirect("/login"); // will instantly redirect
+export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/role");
+  }, [router]);
+
   return null;
 }
